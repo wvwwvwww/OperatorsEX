@@ -29,12 +29,6 @@ int main()
     // Compound Statments 
 
     int index = 0;
-
-    while (index < 10)
-    {
-        printf("\n+1\n");
-        index = index + 1;
-    }
     
     // Bitwise Operators
     unsigned int i = 60; // 0011 1100
@@ -43,32 +37,39 @@ int main()
 
     resulti = i >> 4;
         // 0000 0011
-    printf("\nresult is %d", resulti);
+    printf("\nresult 3 is %d", resulti);
 
     int result3 = 0;
     result3 = i | j;
         // 0011 1101
-    printf("\nresult is %d", result3);
+    printf("\nresult 4 is %d", result3);
 
     int result4 = 0;
     result4 = i ^ j;
         //0011 0001
-    printf("\nresult is %d", result4);
+    printf("\nresult 5 is %d", result4);
 
     int result5 = 0;
     result5 = ~i;
         // 0011 1100 to 1100 0011
-    printf("\nresult is %d", result5);
+    printf("\nresult 6 is %d", result5);
 
     int result6 = 0;
     result6 = i << 4;
         // 0011 1100 0000
-    printf("\nresult is %d", result6);
+    printf("\nresult 7 is %d", result6);
 
      int result7 = 0;
     result7 = i >> 4;
         // 0000 0011
-    printf("\nresult is %d", result7);
+    printf("\nresult 8 is %d\n", result7);
+
+     while (index < 3)
+    {
+        printf("\n+1");
+        index = index + 1;
+    }
+        printf("\n");
 
     return 0;
 }
