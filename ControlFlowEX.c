@@ -25,15 +25,21 @@ int main(void)
     scanf("%i", &number);
 
     if (number < 0)
+    {
         sign = -1;
+    }
     else if (number == 0)
+    {
         sign = 0;
+    }
     else
+    {
         sign = 1;
+    }
 
     printf("Sign = %i\n", sign);
 
-    enum Weekday
+    enum WEEKDAY
     {
         Monday,
         Tuesday,
@@ -43,7 +49,7 @@ int main(void)
         Saturday,
         Sunday
     };
-    enum Weekday today = Monday;
+    enum WEEKDAY today = Monday;
 
     switch (today)
     {
@@ -80,9 +86,13 @@ int main(void)
         break;
     case '/':
         if (value2 == 0)
+        {
             printf("Division by zero. \n");
+        }
         else
+        {
             printf("%.2f\n", value1 / value2);
+        }
         break;
     default:
         printf("Unknown operator. \n");
