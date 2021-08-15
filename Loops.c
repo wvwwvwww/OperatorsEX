@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-int main()
+int main(void)
 {
-    unsigned int sum = 0; // Stores the sum of the integers
-    unsigned int count = 0;       // The number of integers to be summed
+    // for loop
+    unsigned int sum = 0;   // Stores the sum of the integers
+    unsigned int count = 0; // The number of integers to be summed
 
     // Read the number of integers to be summed
     printf("\nEnter the number of integers you want to sum: ");
@@ -18,4 +19,35 @@ int main()
     }
     printf("\nTotal of the first %u numbers is %u\n", count, sum);
     printf("\n");
+
+    // while loop
+    int number = 4;
+    do
+    {
+        printf("\nNumber = %d", number);
+        number++;
+    } while (number < 4);
+
+    //Continue Example
+    enum DAY
+    {
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday
+    };
+
+    for (enum DAY day = Monday; day <= Sunday; ++day)
+    {
+        if (day == Wednesday)
+            continue;
+
+        printf("It's not Wednesday!\n");
+        /* Do something useful with day */
+    }
+
+    return 0;
 }
