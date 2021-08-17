@@ -7,6 +7,9 @@
 
 int main()
 {
+    int p;
+    int i = 0;
+
     int primes[50] = {0};
     int primeIndex = 2;
 
@@ -16,11 +19,11 @@ int main()
     primes[0] = 2;
     primes[1] = 3;
 
-    for (int p = 5; p <= 100; p = p + 2)
+    for (p = 5; p <= 100; p = p + 2)
     {
         isPrime = true;
 
-        for (int i = 1; isPrime && p / primes[i] >= primes[i]; ++i)
+        for (i = 1; isPrime && p / primes[i] >= primes[i]; ++i)
             if (p % primes[i] == 0)
                 isPrime = false;
 
@@ -31,7 +34,7 @@ int main()
         }
     }
 
-    for (int i = 0; i < primeIndex; ++i)
+    for (i = 0; i < primeIndex; ++i)
     {
         printf("%i ", primes[i]);
     }
@@ -45,13 +48,15 @@ int main()
          {7.2, 9.9, 8.4, 3.3, 1.2, 0.8, 0.4, 0.0, 0.6, 1.7, 4.3, 6.2},
          {7.6, 5.6, 3.8, 2.8, 3.8, 0.2, 0.0, 0.0, 0.0, 1.3, 2.6, 5.2}};
 
+    int year,
+        month;
     float subtot, total;
 
     printf("YEAR\t\tRAINFALL (inches)\n");
 
-    for (int year = 0, total = 0; year < YEARS; year++)
+    for (year = 0, total = 0; year < YEARS; year++)
     {
-        for (int month = 0, subtot = 0; month < MONTHS; month++)
+        for (month = 0, subtot = 0; month < MONTHS; month++)
         {
             subtot += rain[year][month];
         }
@@ -63,9 +68,9 @@ int main()
     printf("MONTHLY AVERAGES:\n\n");
     printf(" Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec\n");
 
-    for (int month = 0; month < MONTHS; month++)
+    for (month = 0; month < MONTHS; month++)
     {
-        for (int year = 0, subtot = 0; year < YEARS; year++)
+        for (year = 0, subtot = 0; year < YEARS; year++)
             subtot += rain[year][month];
 
         printf("%4.lf ", subtot / YEARS);
