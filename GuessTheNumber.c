@@ -36,7 +36,7 @@ int main()
         else if (randomNumber < guess)
             printf("Sorry, %d is wrong. My number is less than that. \n", guess);
     }
-    printf("\nYou have had 10 tries and failedm, you're stupid. The number was %d\n", randomNumber);
+    printf("\nYou have had 10 tries and failed, you're stupid. The number was %d\n", randomNumber);
 
     printf("\n");
 
