@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-// #include <conio.h>
+#include <stdbool.h>
 
 char square[10] = {'o', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 int choice, player;
@@ -8,24 +8,49 @@ int choice, player;
 int checkForWin();
 void displayBoard();
 void markBoard(char mark);
+void getPlayerName();
 
 int main()
 {
     int gameStatus;
     char mark;
+    char playerName1[10] = "\0";
+    char playerName2[10] = "\0";
+
+    printf("We need two players, first player, ");
+    getPlayerName(playerName1);
+
+    printf("\nSecond player, ");
+    getPlayerName(playerName2);
 
     player = 1;
 
     do
     {
-        displayBoard();
+        displayBoard(playerName1, playerName2);
 
         // change turns
         player = (player % 2) ? 1 : 2;
 
-        // get input
-        printf("Player %d, enter a number: ", player);
-        scanf("%d", &choice);
+        bool valid = 0;
+        while (!valid)
+        {
+            // get input
+            choice = 0;
+            //        	fflush(stdout);
+            setbuf(stdin, NULL);
+            setbuf(stdout, NULL);
+            printf("%s, please choose your number: ", player == 1 ? playerName1 : playerName2);
+            scanf("%d", &choice);
+            if (choice)
+            {
+                valid = choice; //true
+            }
+            else
+            {
+                printf("Invalid input stupid.\n");
+            }
+        }
 
         // set the correct character based on player turn
         mark = (player == 1) ? 'x' : 'o';
@@ -95,12 +120,12 @@ int checkForWin()
 }
 
 // FUNCTION TO DRAW BOARD OF TIC TAC TOE WITH PLAYERS MARK
-void displayBoard()
+void displayBoard(const char *playerName1, const char *playerName2)
 {
-    system("cls");
+    //    system("cls");
     printf("\n\n\tTic Tac Toe\n\n");
 
-    printf("Player 1 (x) - Player 2 (o)\n\n\n");
+    printf("%s (x) - %s (o)\n\n\n", playerName1, playerName2);
 
     printf("    |    |   \n");
     printf(" %c  | %c  | %c  \n", square[1], square[2], square[3]);
@@ -158,4 +183,13 @@ void markBoard(char mark)
         player--;
         // getch();
     }
+}
+
+/**
+ * Get user input for name
+ */
+void getPlayerName(char *playerName)
+{
+    printf("please enter your name: ");
+    scanf("%s", playerName);
 }
