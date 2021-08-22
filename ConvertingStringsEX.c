@@ -41,7 +41,9 @@ int main()
     {
         value = strtod(pstr, &ptr);
         if (pstr == ptr)
+        {
             break;
+        }
         else
         {
             printf(" %f\n", value);
