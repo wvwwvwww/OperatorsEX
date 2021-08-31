@@ -5,7 +5,7 @@ int main()
 {
     FILE *fp = NULL;
 
-    fp = fopen("file2.txt", "w+");
+    fp = fopen("File2.txt", "w+");
 
     if (fp != NULL)
     {

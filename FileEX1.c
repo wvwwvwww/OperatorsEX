@@ -5,10 +5,10 @@ int main()
 {
     FILE *fp;
     // int c;
-    char str[600];
+    char str[60];
 
     fp = fopen("file.txt", "r");
-    while (fgets(str, 600, fp))
+    while (fgets(str, 60, fp))
     {
         printf("%s", str);
     }
